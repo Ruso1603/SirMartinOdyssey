@@ -1098,6 +1098,7 @@ MonoBehaviour:
   rotatingWall05: {fileID: 107042775}
   state: 0
   timer: 0
+  totalTime: 0
 --- !u!4 &194093589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2852390365941415041, guid: 297d0912e48b759439c7abd4ab3489fc, type: 3}
@@ -3084,6 +3085,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9043770531435764360, guid: 7d204ab3bf3cd5e4b8454eef86556635, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 694316905683040549}
     - target: {fileID: 9043770531435764360, guid: 7d204ab3bf3cd5e4b8454eef86556635, type: 3}
       propertyPath: isHomeScreen
       value: 0
@@ -6125,7 +6130,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100783461}
-  m_LocalRotation: {x: 0.008765805, y: 0.70218325, z: -0.008646282, w: 0.7118898}
+  m_LocalRotation: {x: 0.0087657925, y: 0.70218325, z: -0.00864627, w: 0.7118898}
   m_LocalPosition: {x: 8.940382, y: 2.63, z: 1.944265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7070,7 +7075,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339968339}
-  m_LocalRotation: {x: 0.008765805, y: 0.70218325, z: -0.008646282, w: 0.7118898}
+  m_LocalRotation: {x: 0.0087657925, y: 0.70218325, z: -0.00864627, w: 0.7118898}
   m_LocalPosition: {x: 8.940382, y: 2.63, z: 1.944265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
