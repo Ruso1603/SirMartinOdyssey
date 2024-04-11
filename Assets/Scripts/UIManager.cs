@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public LevelManager levelManager;
 
+    public Inventory inventory;
     public Stats stats;
 
     public bool isHomeScreen;
@@ -18,12 +19,14 @@ public class UIManager : MonoBehaviour
     public Animator menuMessageAnimator;
     public Animator menuHUDAnimator;
     public Animator menuPauseAnimator;
+    public Animator menuInventoryAnimator;
 
     // 0 Home
     // 1 Options
     // 2 Message
     // 3 HUD
     // 4 Pause
+    // 5 Inventory
     public int menu;
 
     [Header("HUD")]
@@ -40,7 +43,6 @@ public class UIManager : MonoBehaviour
     public bool clockEnabled;
     public float clockProgress;
 
-
     [Header("Options")]
 
     public Slider musicSlider;
@@ -51,6 +53,28 @@ public class UIManager : MonoBehaviour
     public string message;
 
     public TextMeshProUGUI messageText;
+
+    [Header("Inventory")]
+
+    public TextMeshProUGUI armorText;
+    public TextMeshProUGUI shieldText;
+    public TextMeshProUGUI swordText;
+
+    public TextMeshProUGUI heartsText;
+    public TextMeshProUGUI cubesText;
+
+    public Transform inventoryPreview;
+    public Transform inventoryPreviewArmorNormal;
+    public Transform inventoryPreviewArmorPower;
+    public Transform inventoryPreviewArmorMagic;
+    public Transform inventoryPreviewShieldNormal;
+    public Transform inventoryPreviewShieldPower;
+    public Transform inventoryPreviewShieldMagic;
+    public Transform inventoryPreviewSwordNormal;
+    public Transform inventoryPreviewSwordPower;
+    public Transform inventoryPreviewSwordMagic;
+
+    // Options
 
     int comingFromMenu;
 
@@ -69,6 +93,9 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", false);
             menuHUDAnimator.SetBool("BoolShowing", false);
             menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
+
+            inventoryPreview.gameObject.SetActive(false);
 
             Time.timeScale = 0;
         }
@@ -82,6 +109,9 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", false);
             menuHUDAnimator.SetBool("BoolShowing", true);
             menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
+
+            inventoryPreview.gameObject.SetActive(false);
 
             Time.timeScale = 1;
         }
@@ -116,6 +146,9 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", false);
             menuHUDAnimator.SetBool("BoolShowing", false);
             menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
+
+            inventoryPreview.gameObject.SetActive(false);
 
         }
         else if (menu == 1)
@@ -127,6 +160,9 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", false);
             menuHUDAnimator.SetBool("BoolShowing", false);
             menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
+
+            inventoryPreview.gameObject.SetActive(false);
 
             AudioListener.volume = musicSlider.value;
             Screen.fullScreen = fullScreenToggle.isOn;
@@ -141,6 +177,9 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", true);
             menuHUDAnimator.SetBool("BoolShowing", false);
             menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
+
+            inventoryPreview.gameObject.SetActive(false);
 
             messageText.text = message;
 
@@ -156,6 +195,9 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", false);
             menuHUDAnimator.SetBool("BoolShowing", true);
             menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
+
+            inventoryPreview.gameObject.SetActive(false);
 
             // Actualizamos corazones
 
@@ -192,9 +234,16 @@ public class UIManager : MonoBehaviour
                 clock.gameObject.SetActive(false);
             }
 
+            // Miramos si hay que cambiar de menú
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 menu = 4;
+            }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                menu = 5;
             }
 
             Time.timeScale = 1;
@@ -208,7 +257,132 @@ public class UIManager : MonoBehaviour
             menuMessageAnimator.SetBool("BoolShowing", false);
             menuHUDAnimator.SetBool("BoolShowing", false);
             menuPauseAnimator.SetBool("BoolShowing", true);
+            menuInventoryAnimator.SetBool("BoolShowing", false);
 
+            inventoryPreview.gameObject.SetActive(false);
+
+            Time.timeScale = 0;
+        }
+        else if(menu == 5)
+        {
+            // Estamos en INVENTORY
+
+            menuHomeAnimator.SetBool("BoolShowing", false);
+            menuOptionsAnimator.SetBool("BoolShowing", false);
+            menuMessageAnimator.SetBool("BoolShowing", false);
+            menuHUDAnimator.SetBool("BoolShowing", false);
+            menuPauseAnimator.SetBool("BoolShowing", false);
+            menuInventoryAnimator.SetBool("BoolShowing", true);
+
+            inventoryPreview.gameObject.SetActive(true);
+
+            // Actualizamos textos para que coincidan con el inventario
+
+            if (inventory.body == 0)
+            {
+                armorText.text = "Normal";
+
+            }
+            else if (inventory.body == 1)
+            {
+                armorText.text = "Power";
+            }
+            else
+            {
+                armorText.text = "Magic";
+            }
+
+            if (inventory.shield == 0)
+            {
+                shieldText.text = "Normal";
+            }
+            else if (inventory.shield == 1)
+            {
+                shieldText.text = "Power";
+            }
+            else
+            {
+                shieldText.text = "Magic";
+            }
+
+            if (inventory.sword == 0)
+            {
+                swordText.text = "Normal";
+            }
+            else if (inventory.sword == 1)
+            {
+                swordText.text = "Power";
+            }
+            else
+            {
+                swordText.text = "Magic";
+            }
+
+            // Actualizamos preview
+
+            inventoryPreviewArmorNormal.gameObject.SetActive(false);
+            inventoryPreviewArmorMagic.gameObject.SetActive(false);
+            inventoryPreviewArmorNormal.gameObject.SetActive(false);
+            inventoryPreviewShieldNormal.gameObject.SetActive(false);
+            inventoryPreviewShieldMagic.gameObject.SetActive(false);
+            inventoryPreviewShieldNormal.gameObject.SetActive(false);
+            inventoryPreviewSwordNormal.gameObject.SetActive(false);
+            inventoryPreviewSwordMagic.gameObject.SetActive(false);
+            inventoryPreviewSwordNormal.gameObject.SetActive(false);
+
+            if (inventory.body == 0)
+            {
+                inventoryPreviewArmorNormal.gameObject.SetActive(true);
+
+            }
+            else if (inventory.body == 1)
+            {
+                inventoryPreviewArmorPower.gameObject.SetActive(true);
+            }
+            else
+            {
+                inventoryPreviewArmorMagic.gameObject.SetActive(true);
+            }
+
+            if (inventory.shield == 0)
+            {
+                inventoryPreviewShieldNormal.gameObject.SetActive(true);
+
+            }
+            else if (inventory.shield == 1)
+            {
+                inventoryPreviewShieldPower.gameObject.SetActive(true);
+            }
+            else
+            {
+                inventoryPreviewShieldMagic.gameObject.SetActive(true);
+            }
+
+            if (inventory.sword == 0)
+            {
+                inventoryPreviewSwordNormal.gameObject.SetActive(true);
+
+            }
+            else if (inventory.sword == 1)
+            {
+                inventoryPreviewSwordPower.gameObject.SetActive(true);
+            }
+            else
+            {
+                inventoryPreviewSwordMagic.gameObject.SetActive(true);
+            }
+
+            // Actualizamos textos para que coincidan con los stats
+
+            heartsText.text = "" + stats.hearts;
+            cubesText.text = "" + stats.cubes;
+
+            // Miramos si hay que cambiar de menú
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                menu = 3;
+            }
 
             Time.timeScale = 0;
         }
@@ -263,6 +437,53 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void OnInventoryContinue()
+    {
+        menu = 3;
+    }
 
+    public void OnInventoryArmorLeft()
+    {
+        inventory.body = inventory.body - 1;
+
+        if(inventory.body < 0) { inventory.body = 0; }
+    }
+
+    public void OnInventoryArmorRight()
+    {
+        inventory.body = inventory.body + 1;
+
+        if (inventory.body > 2) { inventory.body = 2; }
+    }
+
+    public void OnInventoryShieldLeft()
+    {
+        inventory.shield = inventory.shield - 1;
+
+        if (inventory.shield < 0) { inventory.shield = 0; }
+
+    }
+
+    public void OnInventoryShieldRight()
+    {
+        inventory.shield = inventory.shield + 1;
+
+        if (inventory.shield > 2) { inventory.shield = 2; }
+
+    }
+
+    public void OnInventorySwordLeft()
+    {
+        inventory.sword = inventory.sword - 1;
+
+        if (inventory.sword < 0) { inventory.sword = 0; }
+    }
+
+    public void OnInventorySwordRight()
+    {
+        inventory.sword = inventory.sword + 1;
+
+        if (inventory.sword > 2) { inventory.sword = 2; }
+    }
 
 }

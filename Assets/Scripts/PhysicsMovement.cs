@@ -12,6 +12,8 @@ public class PhysicsMovement : MonoBehaviour
     public float forward;
     public float lateral;
 
+    public float speed = 6;
+
     float forwardPrevious;
     float lateralPrevious;
 
@@ -69,7 +71,7 @@ public class PhysicsMovement : MonoBehaviour
             direction = Camera.main.transform.TransformDirection(direction);
             direction = new Vector3(direction.x, 0, direction.z);
 
-            rigidbody.velocity = direction * 6;
+            rigidbody.velocity = direction * speed;
 
 
 

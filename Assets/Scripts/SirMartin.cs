@@ -15,6 +15,7 @@ public class SirMartin : MonoBehaviour
     public Animator animator;
     public Spawner magicSpawner;
     public Spawner powerSpawner;
+    public Transform smoke;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,17 @@ public class SirMartin : MonoBehaviour
 
         movement.forward = Input.GetAxis("Vertical");
         movement.lateral = Input.GetAxis("Horizontal");
+
+        if(inventory.body == 1)
+        {
+            movement.speed = 12;
+            smoke.gameObject.SetActive(true);
+        }
+        else
+        {
+            movement.speed = 6;
+            smoke.gameObject.SetActive(false);
+        }
 
         if(damageSensor.entered)
         {
@@ -50,14 +62,18 @@ public class SirMartin : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            magicSpawner.spawn = true;
-            attack.attack = true;
-        }
-        else if(Input.GetMouseButtonDown(1))
-        {
-            powerSpawner.spawn = true;
+            if(inventory.sword == 1)
+            {
+                powerSpawner.spawn = true;
+            }
+            else if(inventory.sword == 2)
+            {
+                magicSpawner.spawn = true;
+            }
+
             attack.attack = true;
         }
 
     }
+
 }

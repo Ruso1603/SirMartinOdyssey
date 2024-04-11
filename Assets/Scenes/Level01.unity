@@ -3090,6 +3090,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 694316905683040549}
     - target: {fileID: 9043770531435764360, guid: 7d204ab3bf3cd5e4b8454eef86556635, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 694316905683040550}
+    - target: {fileID: 9043770531435764360, guid: 7d204ab3bf3cd5e4b8454eef86556635, type: 3}
       propertyPath: isHomeScreen
       value: 0
       objectReference: {fileID: 0}
@@ -6130,7 +6134,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100783461}
-  m_LocalRotation: {x: 0.0087657925, y: 0.70218325, z: -0.00864627, w: 0.7118898}
+  m_LocalRotation: {x: 0.008765805, y: 0.70218325, z: -0.008646282, w: 0.7118898}
   m_LocalPosition: {x: 8.940382, y: 2.63, z: 1.944265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7075,7 +7079,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339968339}
-  m_LocalRotation: {x: 0.0087657925, y: 0.70218325, z: -0.00864627, w: 0.7118898}
+  m_LocalRotation: {x: 0.008765805, y: 0.70218325, z: -0.008646282, w: 0.7118898}
   m_LocalPosition: {x: 8.940382, y: 2.63, z: 1.944265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10591,6 +10595,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5145631248102654506, guid: 1e61121d03efd4a4a926ea4259a5e598, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145631248102654506, guid: 1e61121d03efd4a4a926ea4259a5e598, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145631248102654506, guid: 1e61121d03efd4a4a926ea4259a5e598, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145631248102654506, guid: 1e61121d03efd4a4a926ea4259a5e598, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e61121d03efd4a4a926ea4259a5e598, type: 3}
 --- !u!114 &694316905683040549 stripped
@@ -10602,6 +10622,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 624e2dadee53f544787ffc476380c50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &694316905683040550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6903883117570405580, guid: 1e61121d03efd4a4a926ea4259a5e598, type: 3}
+  m_PrefabInstance: {fileID: 694316905683040548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcfe8bb0b749fb4aa6458c945685ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &790376568876062235
