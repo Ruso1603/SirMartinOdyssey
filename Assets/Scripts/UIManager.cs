@@ -82,7 +82,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(isHomeScreen)
+        if (isHomeScreen)
         {
             // Estamos en la pantalla de inicio: Abrimos el menú home
 
@@ -118,24 +118,29 @@ public class UIManager : MonoBehaviour
 
         musicSlider.value = AudioListener.volume;
 
+        // Esto sirve para que el jugador no pueda sacar el 
+        // cursor del ratón de la ventana
+        Cursor.lockState = CursorLockMode.Confined;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         // Codigo de test
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            menu = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.F2))
-        {
-            menu = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.F3))
-        {
-            menu = 2;
-        }
+        //if (Input.GetKeyDown(KeyCode.F1))
+        //{
+        //    menu = 0;
+        //}
+        //else if (Input.GetKeyDown(KeyCode.F2))
+        //{
+        //    menu = 1;
+        //}
+        //else if (Input.GetKeyDown(KeyCode.F3))
+        //{
+        //    menu = 2;
+        //}
 
         if (menu == 0)
         {
@@ -407,6 +412,11 @@ public class UIManager : MonoBehaviour
     {
         comingFromMenu = 0;
         menu = 1;
+    }
+
+    public void OnHomeQuit()
+    {
+        Application.Quit(0);
     }
 
     public void OnOptionsOk()
