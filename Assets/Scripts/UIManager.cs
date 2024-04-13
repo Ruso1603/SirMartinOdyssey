@@ -326,14 +326,14 @@ public class UIManager : MonoBehaviour
             // Actualizamos preview
 
             inventoryPreviewArmorNormal.gameObject.SetActive(false);
+            inventoryPreviewArmorPower.gameObject.SetActive(false);
             inventoryPreviewArmorMagic.gameObject.SetActive(false);
-            inventoryPreviewArmorNormal.gameObject.SetActive(false);
             inventoryPreviewShieldNormal.gameObject.SetActive(false);
+            inventoryPreviewShieldPower.gameObject.SetActive(false);
             inventoryPreviewShieldMagic.gameObject.SetActive(false);
-            inventoryPreviewShieldNormal.gameObject.SetActive(false);
             inventoryPreviewSwordNormal.gameObject.SetActive(false);
+            inventoryPreviewSwordPower.gameObject.SetActive(false);
             inventoryPreviewSwordMagic.gameObject.SetActive(false);
-            inventoryPreviewSwordNormal.gameObject.SetActive(false);
 
             if (inventory.body == 0)
             {
