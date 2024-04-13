@@ -3,7 +3,87 @@ guid: 374c63b2586b62742af684e8812ffe99
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: 549285d825c618f44844bccab06f58ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagicArmor Slot #4
+    second: {fileID: 2100000, guid: 549285d825c618f44844bccab06f58ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagicMaterial1
+    second: {fileID: 2100000, guid: 925aa76ec36b2274c9b4a7772a7fb453, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagicMaterial2
+    second: {fileID: 2100000, guid: 4ee6d6bc8b1e4284b93b3c3c5182ac74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MagicMaterial3
+    second: {fileID: 2100000, guid: cef519ef9cbc17545a901d439a66a5b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh
+    second: {fileID: 2100000, guid: 772f29a1f3899e54d8029f002c848652, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plates
+    second: {fileID: 2100000, guid: 182dfb7624f107e45a35b1bd9baf85c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PowerArmor Slot #4
+    second: {fileID: 2100000, guid: 549285d825c618f44844bccab06f58ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PowerMaterial1
+    second: {fileID: 2100000, guid: 925aa76ec36b2274c9b4a7772a7fb453, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PowerMaterial2
+    second: {fileID: 2100000, guid: c2bf523c8143f48478c5c22a79d15c27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PowerMaterial3
+    second: {fileID: 2100000, guid: 97c99346f6e0ebe42ad35b62aba9f53f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shield1
+    second: {fileID: 2100000, guid: 0d1e06feba519eb4b8a1431341adb672, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shield2
+    second: {fileID: 2100000, guid: e54a0a3772af5994cb8d85237442bf05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sword1
+    second: {fileID: 2100000, guid: 58b2345b399970f439fa4214d2443845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sword2
+    second: {fileID: 2100000, guid: 6142916f353184043aa0118a2aec26e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tail
+    second: {fileID: 2100000, guid: 925aa76ec36b2274c9b4a7772a7fb453, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
